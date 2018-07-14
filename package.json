@@ -1,0 +1,51 @@
+{
+  "name": "yuhu",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "watch": "vue-cli-service build --watch --mode=${NODE_ENV}",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "serve": "^9.2.0",
+    "tailwindcss": "^0.6.3",
+    "vue": "^2.5.16",
+    "vue-resource": "^1.5.1",
+    "vue-router": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli": "^3.0.0-rc.3",
+    "@vue/cli-plugin-babel": "^3.0.0-beta.15",
+    "@vue/cli-plugin-eslint": "^3.0.0-beta.15",
+    "@vue/cli-service": "^3.0.0-beta.15",
+    "@vue/eslint-config-airbnb": "^3.0.0-rc.3",
+    "vue-template-compiler": "^2.5.16"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "@vue/airbnb"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "tailwindcss": {},
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}

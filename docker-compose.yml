@@ -1,0 +1,20 @@
+# Web Server
+web:
+    build: ./
+    ports:
+        - "50082:8080"
+    volumes:
+        - ./:/data:cached
+    command: yarn serve
+    env_file:
+        - .docker.env
+        - .docker.local.env
+
+# Command Line Tools
+cli:
+    build: ./
+    volumes:
+        - ./:/data:cached
+    env_file:
+        - .docker.env
+        - .docker.local.env

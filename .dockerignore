@@ -1,0 +1,15 @@
+.travis.yml
+.editorconfig
+.gitignore
+.styleci.yml
+.docker.env
+.docker.local.env
+.build
+Makefile
+Dockerfile
+docker-compose.yml
+LICENSE
+README.md
+codecov.yml
+coverage.xml
+docs
