@@ -1,0 +1,12 @@
+.container:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.container.with-title {
+    padding-top: 2rem;
+}
+
+.container {
+    position: relative;
+    padding: 1.5rem 2rem;
+}
