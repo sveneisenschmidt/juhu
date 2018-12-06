@@ -1,20 +1,11 @@
 import axios from 'axios';
 
-function getPlayer() {
-    axios.get('/user?ID=12345')
-        .then(function (response) {
-            // handle success
-            console.log(response);
-        })
-        .catch(function (error) {
-            // handle error
-            console.log(error);
-        })
-        .then(function () {
-            // always executed
-        });
+const API_BASE_URL = 'http://70c755fc.ngrok.io/api/';
+
+function getPlayers() {
+    return axios.get(`${API_BASE_URL}players/`);
 }
 
 export default {
-    getPlayer
+    getPlayers
 };
