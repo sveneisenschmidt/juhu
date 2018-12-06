@@ -17,10 +17,10 @@ export default class CustomAchievements extends Component {
                         </div>
                     </div>
                 </div>
-                <form autocomplete="on">
+                <form autoComplete="on">
                     <div className="field">
-                    <label for="name_field" className="formTitle">Achievement unlocked:
-                    <input type="text" id="name_field" className="input" autofocus />
+                    <label htmlFor="name_field" className="formTitle">Achievement unlocked:
+                    <input type="text" id="name_field" className="input" autoFocus />
                     </label>
                     </div>
                     <input type="submit" value = "Unlock" className="customachievements btn is-primary"/>
