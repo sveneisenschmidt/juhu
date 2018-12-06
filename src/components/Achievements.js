@@ -1,7 +1,7 @@
 import {Component} from "react";
 import React from "react";
 import Apiservice from "../util/apiservice";
-import Player from "./Player";
+import Achievement from "./Achievement";
 
 export default class Achievements extends Component {
     constructor(props) {
@@ -14,7 +14,7 @@ export default class Achievements extends Component {
 
     componentDidMount() {
 
-        Apiservice.getPlayers().then(response => {
+        Apiservice.getAchievements().then(response => {
             console.log(response);
             this.setState({
                 achievements: response.data
@@ -27,7 +27,8 @@ export default class Achievements extends Component {
             <div>
                 Achievements
                 <ul>
-                    {this.state.achievements.map((player, i) => <Player key={i.toString()} player={player}/>)}
+                    {this.state.achievements.map((achievement, i) =>
+                        <Achievement key={i.toString()} achievement={achievement}/>)}
                 </ul>
             </div>
         );
