@@ -13,7 +13,6 @@ export default class Leaderboard extends Component {
     }
 
     componentDidMount() {
-
         Apiservice.getLeaderboard().then(response => {
             console.log(response);
             this.setState({
