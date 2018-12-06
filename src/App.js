@@ -7,6 +7,7 @@ import './App.css';
 
 const ROUTES = {
     OVERVIEW: "/",
+    PLAYERS: "/players",
     LEADERBOARD: "/leaderboard",
     ACHIEVEMENTS: "/achievements"
 };
@@ -17,11 +18,13 @@ class App extends Component {
             <Router>
                 <div className="App">
                     <header>
-
-                        <Link to={ROUTES.OVERVIEW} className="leader-board btn">
+                        <Link to={ROUTES.OVERVIEW} className="overview btn">
                             Overview
                         </Link>
-                        <Link to={ROUTES.LEADERBOARD} className="leader-board btn">
+                        <Link to={ROUTES.PLAYERS} className="players btn">
+                            Players
+                        </Link>
+                        <Link to={ROUTES.LEADERBOARD} className="leaderboard btn">
                             Leaderboard
                         </Link>
                         <Link to={ROUTES.ACHIEVEMENTS} className="achievements btn">
