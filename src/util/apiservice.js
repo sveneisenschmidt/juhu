@@ -6,6 +6,16 @@ function getPlayers() {
     return axios.get(`${API_BASE_URL}players/`);
 }
 
+function getLeaderboard() {
+    return axios.get(`${API_BASE_URL}leaderboard/`);
+}
+
+function getAchievements() {
+    return axios.get(`${API_BASE_URL}achievements/`);
+}
+
 export default {
-    getPlayers
+    getPlayers,
+    getLeaderboard,
+    getAchievements
 };

@@ -1,12 +1,34 @@
 import {Component} from "react";
-import {Link, Route} from "react-router-dom";
 import React from "react";
+import Apiservice from "../util/apiservice";
+import Player from "./Player";
 
 export default class Leaderboard extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            players: []
+        }
+    }
+
+    componentDidMount() {
+
+        Apiservice.getLeaderboard().then(response => {
+            console.log(response);
+            this.setState({
+                players: response.data
+            });
+        })
+    }
+
     render() {
         return (
             <div>
                 Leaderboard
+                <ul>
+                    {this.state.players.map((player, i) => <Player key={i.toString()} player={player}/>)}
+                </ul>
             </div>
         );
     }

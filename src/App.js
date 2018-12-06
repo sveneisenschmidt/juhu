@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Overview from "./components/Overview";
 import Players from "./components/Players";
 import Leaderboard from "./components/Leaderboard";
 import Achievements from "./components/Achievements";
 import './App.css';
+import LinkButton from "./components/LinkButton";
 
 const ROUTES = {
     OVERVIEW: "/",
@@ -20,18 +21,20 @@ class App extends Component {
                 <div className="App">
                     <section className={'container with-title'}>
                         <h2 className={'title'}>Menu</h2>
-                        <Link to={ROUTES.OVERVIEW} className="overview btn">
-                            Overview
-                        </Link>
-                        <Link to={ROUTES.PLAYERS} className="players btn">
-                            Players
-                        </Link>
-                        <Link to={ROUTES.LEADERBOARD} className="leaderboard btn">
-                            Leaderboard
-                        </Link>
-                        <Link to={ROUTES.ACHIEVEMENTS} className="achievements btn">
-                            Achievements
-                        </Link>
+                        <div>
+                            <LinkButton to={ROUTES.OVERVIEW} className="overview btn">
+                                Overview
+                            </LinkButton>
+                            <LinkButton to={ROUTES.PLAYERS} className="players btn">
+                                Players
+                            </LinkButton>
+                            <LinkButton to={ROUTES.LEADERBOARD} className="leaderboard btn">
+                                Leaderboard
+                            </LinkButton>
+                            <LinkButton to={ROUTES.ACHIEVEMENTS} className="achievements btn">
+                                Achievements
+                            </LinkButton>
+                        </div>
                     </section>
                     <hr/>
                     <Route exact path={ROUTES.OVERVIEW} component={Overview}/>

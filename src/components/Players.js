@@ -25,9 +25,9 @@ export default class Players extends Component {
         return (
             <div>
                 Players
-                {this.state.players.map((player, i) => <Player key={i.toString()} player={player}/>)}
-
-
+                <ul>
+                    {this.state.players.map((player, i) => <Player key={i.toString()} player={player}/>)}
+                </ul>
             </div>
         );
     }

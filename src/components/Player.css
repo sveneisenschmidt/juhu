@@ -1,0 +1,11 @@
+.player span {
+    display: inline-block;
+}
+
+.player__name {
+    margin: 0 5px;
+}
+
+.player__score {
+    font-size: 30px;
+}
