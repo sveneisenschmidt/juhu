@@ -24,7 +24,7 @@ restart: stop start
 start:
 	@$(call .docker-upd,web)
 	@sleep 5
-	# http://localhost:50080
+	# http://localhost:50082
 
 .PHONY: start-attached
 start-attached:

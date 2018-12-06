@@ -6,12 +6,14 @@ import Leaderboard from "./components/Leaderboard";
 import Achievements from "./components/Achievements";
 import './App.css';
 import LinkButton from "./components/LinkButton";
+import CustomAchievements from "./components/CustomAchievements"
 
 const ROUTES = {
     OVERVIEW: "/",
     PLAYERS: "/players",
     LEADERBOARD: "/leaderboard",
-    ACHIEVEMENTS: "/achievements"
+    ACHIEVEMENTS: "/achievements",
+    CUSTOM_ACHIEVEMENTS: "/customachievements"
 };
 
 class App extends Component {
@@ -34,13 +36,16 @@ class App extends Component {
                             <LinkButton to={ROUTES.ACHIEVEMENTS} className="achievements btn is-warning">
                                 Achievements
                             </LinkButton>
+                            <LinkButton to={ROUTES.CUSTOM_ACHIEVEMENTS} className="customachievements btn is-primary">
+                                Custom Achievements
+                            </LinkButton>
                         </div>
                     </section>
                     <Route exact path={ROUTES.OVERVIEW} component={Overview}/>
                     <Route exact path={ROUTES.PLAYERS} component={Players}/>
                     <Route path={ROUTES.LEADERBOARD} component={Leaderboard}/>
                     <Route path={ROUTES.ACHIEVEMENTS} component={Achievements}/>
-
+                    <Route path={ROUTES.CUSTOM_ACHIEVEMENTS} component={CustomAchievements}/>
                 </div>
             </Router>
         );
