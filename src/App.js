@@ -33,7 +33,7 @@ class App extends Component {
                             <LinkButton to={ROUTES.ACHIEVEMENTS} className="achievements btn is-warning">
                                 Achievements
                             </LinkButton>
-                            <LinkButton to={ROUTES.CUSTOM_ACHIEVEMENTS} className="customachievements btn is-primary">
+                            <LinkButton to={ROUTES.CUSTOM_ACHIEVEMENTS} className="custom-achievements btn is-primary">
                                 Custom Achievements
                             </LinkButton>
                         </div>

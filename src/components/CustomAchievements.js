@@ -6,7 +6,7 @@ export default class CustomAchievements extends Component {
 
     render() {
         return (
-            <section className="container with-title balloon">
+            <section className="container with-title balloon custom-achievements">
                 <h2 className="title">Custom Achievements</h2>
                 <div className="messages">
                     <div className="message -left">
@@ -23,7 +23,7 @@ export default class CustomAchievements extends Component {
                     <input type="text" id="name_field" className="input" autoFocus />
                     </label>
                     </div>
-                    <input type="submit" value = "Unlock" className="customachievements btn is-primary"/>
+                    <input type="submit" value = "Unlock" className="btn is-primary"/>
                 </form>
 
             </section>
