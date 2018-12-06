@@ -1,14 +1,10 @@
-import {Component} from "react";
-import {Link, Route} from "react-router-dom";
-import React from "react";
+import React, {Component} from "react";
+import {Link} from "react-router-dom";
 import './Player.css';
-import Leaderboard from "./Leaderboard";
 
-
-export default class Player extends Component {
+export default class PlayerList extends Component {
     render() {
-        const { player } = this.props;
-
+        let {player} = this.props;
 
         return (
             <li className={'player'}>
@@ -19,7 +15,6 @@ export default class Player extends Component {
                         {player.score}
                     </span>
                 </Link>
-                <Route path={`/players/:playerName`} component={Leaderboard}/>
             </li>
         );
     }

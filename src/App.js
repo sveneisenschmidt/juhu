@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Overview from "./components/Overview";
-import Players from "./components/Players";
 import Leaderboard from "./components/Leaderboard";
 import Achievements from "./components/Achievements";
 import './App.css';
 import LinkButton from "./components/LinkButton";
 import CustomAchievements from "./components/CustomAchievements"
+import PlayerId from "./components/PlayerId";
 
 const ROUTES = {
     OVERVIEW: "/",
@@ -27,9 +27,6 @@ class App extends Component {
                             <LinkButton to={ROUTES.OVERVIEW} className="overview btn">
                                 Overview
                             </LinkButton>
-                            <LinkButton to={ROUTES.PLAYERS} className="players btn is-primary">
-                                Players
-                            </LinkButton>
                             <LinkButton to={ROUTES.LEADERBOARD} className="leaderboard btn is-success">
                                 Leaderboard
                             </LinkButton>
@@ -42,9 +39,9 @@ class App extends Component {
                         </div>
                     </section>
                     <Route exact path={ROUTES.OVERVIEW} component={Overview}/>
-                    <Route exact path={ROUTES.PLAYERS} component={Players}/>
                     <Route path={ROUTES.LEADERBOARD} component={Leaderboard}/>
                     <Route path={ROUTES.ACHIEVEMENTS} component={Achievements}/>
+                    <Route path={`${ROUTES.PLAYERS}/:playerId`} component={PlayerId}/>
                     <Route path={ROUTES.CUSTOM_ACHIEVEMENTS} component={CustomAchievements}/>
                 </div>
             </Router>
