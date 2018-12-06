@@ -6,7 +6,7 @@ import Leaderboard from "./components/Leaderboard";
 import Achievements from "./components/Achievements";
 import './App.css';
 import LinkButton from "./components/LinkButton";
-import Player from "./components/Player";
+import PlayerId from "./components/PlayerId";
 
 const ROUTES = {
     OVERVIEW: "/",
@@ -41,7 +41,7 @@ class App extends Component {
                     <Route exact path={ROUTES.PLAYERS} component={Players}/>
                     <Route path={ROUTES.LEADERBOARD} component={Leaderboard}/>
                     <Route path={ROUTES.ACHIEVEMENTS} component={Achievements}/>
-                    <Route path={`${ROUTES.PLAYERS}/:playerName`} component={Player}/>
+                    <Route path={`${ROUTES.PLAYERS}/:playerId`} component={PlayerId}/>
                 </div>
             </Router>
         );

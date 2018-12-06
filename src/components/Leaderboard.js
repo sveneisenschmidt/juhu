@@ -1,7 +1,7 @@
 import {Component} from "react";
 import React from "react";
 import Apiservice from "../util/apiservice";
-import Player from "./Player";
+import PlayerList from "./PlayerList";
 
 export default class Leaderboard extends Component {
     constructor(props) {
@@ -27,7 +27,7 @@ export default class Leaderboard extends Component {
                 <h2 className={'title'}>Leaderboard</h2>
                 <ul>
                     {this.state.players.map((player, i) =>
-                        <Player key={i.toString()} player={player}/>)}
+                        <PlayerList key={i.toString()} player={player}/>)}
                 </ul>
             </section>
         );
