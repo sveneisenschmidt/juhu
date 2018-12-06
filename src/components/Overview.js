@@ -4,9 +4,9 @@ import React from "react";
 export default class Overview extends Component {
     render() {
         return (
-            <div>
-                Overview
-            </div>
+            <section className="container with-title">
+                <h2>Overview</h2>
+            </section>
         );
     }
 };

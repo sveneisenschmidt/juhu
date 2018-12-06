@@ -24,13 +24,13 @@ export default class Achievements extends Component {
 
     render() {
         return (
-            <div>
-                Achievements
+            <section className="container with-title">
+                <h2 className={'title'}>Achievements</h2>
                 <ul>
                     {this.state.achievements.map((achievement, i) =>
                         <Achievement key={i.toString()} achievement={achievement}/>)}
                 </ul>
-            </div>
+            </section>
         );
     }
 };

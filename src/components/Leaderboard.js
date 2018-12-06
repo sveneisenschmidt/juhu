@@ -24,12 +24,13 @@ export default class Leaderboard extends Component {
 
     render() {
         return (
-            <div>
-                Leaderboard
+            <section className={'container with-title'}>
+                <h2 className={'title'}>Leaderboard</h2>
                 <ul>
-                    {this.state.players.map((player, i) => <Player key={i.toString()} player={player}/>)}
+                    {this.state.players.map((player, i) =>
+                        <Player key={i.toString()} player={player}/>)}
                 </ul>
-            </div>
+            </section>
         );
     }
 };

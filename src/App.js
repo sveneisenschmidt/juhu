@@ -25,22 +25,22 @@ class App extends Component {
                             <LinkButton to={ROUTES.OVERVIEW} className="overview btn">
                                 Overview
                             </LinkButton>
-                            <LinkButton to={ROUTES.PLAYERS} className="players btn">
+                            <LinkButton to={ROUTES.PLAYERS} className="players btn is-primary">
                                 Players
                             </LinkButton>
-                            <LinkButton to={ROUTES.LEADERBOARD} className="leaderboard btn">
+                            <LinkButton to={ROUTES.LEADERBOARD} className="leaderboard btn is-success">
                                 Leaderboard
                             </LinkButton>
-                            <LinkButton to={ROUTES.ACHIEVEMENTS} className="achievements btn">
+                            <LinkButton to={ROUTES.ACHIEVEMENTS} className="achievements btn is-warning">
                                 Achievements
                             </LinkButton>
                         </div>
                     </section>
-                    <hr/>
                     <Route exact path={ROUTES.OVERVIEW} component={Overview}/>
                     <Route exact path={ROUTES.PLAYERS} component={Players}/>
                     <Route path={ROUTES.LEADERBOARD} component={Leaderboard}/>
                     <Route path={ROUTES.ACHIEVEMENTS} component={Achievements}/>
+
                 </div>
             </Router>
         );

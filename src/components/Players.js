@@ -23,12 +23,12 @@ export default class Players extends Component {
 
     render() {
         return (
-            <div>
-                Players
+            <section className="container with-title">
+                <h2 className={'title'}>Players</h2>
                 <ul>
                     {this.state.players.map((player, i) => <Player key={i.toString()} player={player}/>)}
                 </ul>
-            </div>
+            </section>
         );
     }
 };
