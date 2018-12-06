@@ -12,14 +12,6 @@ all:
 	#    cleanall             Cleans containers, images and project files including caches, logs
 	#    install              Install and build the application including development environment
 	#    test                 Run application tests
-	#    test-coverage        Run application tests and generate code coverage
-	#    qa					  Run static code analysis 
-	#    default-publish      Publish demo docker image to sveneisenschmidt/yay
-	#    demo-publish         Publish demo docker image to sveneisenschmidt/yay-demo
-	#    enable-demo          Enable demo integration
-	#    disable-demo         Remove demo integration
-	#    watch-logs           Watch all log files
-	#    watch-redis          Watch all redis queries
 
 # Includes
 include makedefs/*.mk
@@ -58,14 +50,5 @@ install: build .application-install-dependencies .application-build
 .PHONY: build
 build: .docker-build-images
 
-.PHONY: watch
-watch: .application-watch
-
 .PHONY: test
 test: .application-test
-
-.PHONY: test-coverage
-test-coverage: .application-test-coverage
-
-.PHONY: qa
-qa: .application-qa
