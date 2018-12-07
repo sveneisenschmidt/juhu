@@ -3,6 +3,10 @@ ul > li {
     list-style: none;
 }
 
+.text-centered {
+    text-align: center;
+}
+
 .container:not(:last-child) {
     margin-bottom: 1rem;
 }
@@ -25,15 +29,19 @@ ul > li {
     display: flex;
     flex-direction: column;
 }
+
 .balloon.container .message {
     display: flex;
 }
+
 .balloon.container .message i {
     align-self: flex-end;
 }
+
 .balloon.container .message.-left {
     align-self: flex-start;
 }
+
 .balloon.container .message.-right {
     align-self: flex-end;
 }
@@ -41,3 +49,38 @@ ul > li {
 .form.container > .field:not(:last-child) {
     margin-bottom: 1rem;
 }
+
+.table {
+    table-layout: fixed;
+    background-color: #fff;
+    width: 100%;
+}
+
+table.is-centered th {
+    text-align: center;
+}
+
+table.is-bordered {
+    box-shadow: 4px 0 #212529, 0 -4px #212529, -4px 0 #212529, 0 4px #212529;
+}
+
+tr th,
+tr td {
+    padding: 0.5rem;
+    word-wrap: break-word;
+}
+
+
+tr th + th {
+    box-shadow: -4px 0 #212529;
+}
+
+tr td {
+    box-shadow: 0 -4px #212529;
+}
+
+tr td:not(:first-child) {
+    box-shadow: -4px 0 #212529, 0 -4px #212529;
+}
+
+

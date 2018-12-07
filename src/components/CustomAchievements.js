@@ -1,5 +1,5 @@
-import {Component} from "react";
-import React from "react";
+import React, {Component} from "react";
+import Autocomplete from './Autocomplete';
 import './CustomAchievements.css';
 import Apiservice from "../util/apiservice";
 
@@ -9,7 +9,17 @@ export default class CustomAchievements extends Component {
         this.state = {
             username: '',
             action: '',
+            players: []
         }
+    }
+
+    componentDidMount() {
+        Apiservice.getPlayers().then(response => {
+            this.setState({
+                players: response.data
+            });
+            console.log(response.data)
+        });
     }
 
     onChange = (e) => {
@@ -18,13 +28,10 @@ export default class CustomAchievements extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-
         const {username, action} = this.state;
         console.log({username, action});
 
         Apiservice.sendAction(username, action);
-
-
     }
 
     render() {
@@ -43,11 +50,17 @@ export default class CustomAchievements extends Component {
                         </div>
                     </div>
                 </div>
-                <form onSubmit={this.onSubmit} autoComplete="on">
+                <form onSubmit={this.onSubmit}>
                     <div className="field">
                         <label htmlFor="name_field" className="formTitle">User Name:
-                            <input type="text" id="name_field" name="username" value={username} onChange={this.onChange}
-                                   className="input" autoFocus/>
+                            <Autocomplete
+                                fieldName={'username'}
+                                cssClasses={'input'}
+                                autoFocus={true}
+                                suggestions={this.state.players.map((player, i) => {
+                                    return <span id={player.username}>{player.name}</span>;
+                                })}
+                            />
                         </label>
                     </div>
                     <div className="field">

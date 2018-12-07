@@ -1,5 +1,4 @@
-import {Component} from "react";
-import React from "react";
+import React, {Component} from "react";
 import Apiservice from "../util/apiservice";
 import PlayerList from "./PlayerList";
 
@@ -23,12 +22,20 @@ export default class Leaderboard extends Component {
 
     render() {
         return (
-            <section className={'container with-title'}>
+            <section className={'container with-title is-centered'}>
                 <h2 className={'title'}>Leaderboard</h2>
-                <ul>
+                <table className={'table is-bordered is-centered'}>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                     {this.state.players.map((player, i) =>
                         <PlayerList key={i.toString()} player={player}/>)}
-                </ul>
+                    </tbody>
+                </table>
             </section>
         );
     }

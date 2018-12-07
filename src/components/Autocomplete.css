@@ -1,0 +1,30 @@
+.no-suggestions {
+    color: #999;
+    padding: 0.5rem;
+}
+
+.suggestions {
+    list-style: none;
+    margin-top: 0;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 0;
+    width: 372px;
+    box-shadow: 0 -4px #fff, 0 -8px #212529, 4px 0 #fff, 4px -4px #212529, 8px 0 #212529, 0 4px #fff, 0 8px #212529, -4px 0 #fff, -4px 4px #212529, -8px 0 #212529, -4px -4px #212529, 4px 4px #212529;
+}
+
+.suggestions li {
+    padding: 0.5rem;
+    margin-top: 0;
+}
+
+.suggestion-active,
+.suggestions li:hover {
+    background-color: rgb(146, 204, 65);;
+    color: #fff;
+    cursor: pointer;
+}
+
+.suggestions li:not(:last-of-type) {
+    border-bottom: 1px solid #999;
+}

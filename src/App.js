@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Overview from "./components/Overview";
 import Leaderboard from "./components/Leaderboard";
 import Achievements from "./components/Achievements";
+import './Nes.css';
 import './App.css';
 import LinkButton from "./components/LinkButton";
 import CustomAchievements from "./components/CustomAchievements"
