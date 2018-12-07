@@ -22,21 +22,23 @@ export default class CustomAchievements extends Component {
         });
     }
 
-    onChange = (e) => {
+    onChange = e => {
         this.setState({[e.target.name]: e.target.value});
-    }
+    };
 
-    onSubmit = (e) => {
+    updateUsernameValue = text => { this.setState({ username: text })}
+
+    onSubmit = e => {
         e.preventDefault();
         const {username, action} = this.state;
         console.log({username, action});
 
         Apiservice.sendAction(username, action);
 
-    }
+    };
 
     render() {
-        const {username, action} = this.state;
+        const {action} = this.state;
         return (
             <section className="container with-title balloon">
                 <h2 className="title">Custom Achievements</h2>
@@ -59,7 +61,7 @@ export default class CustomAchievements extends Component {
                                 fieldName={'username'}
                                 cssClasses={'input'}
                                 autoFocus={true}
-                                value={username}
+                                updateValue={this.updateUsernameValue}
                                 suggestions={this.state.players.map((player, i) => {
                                     return <span id={player.username}>{player.name}</span>;
                                 })}
@@ -72,7 +74,7 @@ export default class CustomAchievements extends Component {
                                    className="input"/>
                         </label>
                     </div>
-                    <input type="submit" value="Submit Achievement" className="customachievementsbtn is-primary"/>
+                    <input type="submit" value="Submit Achievement" className="btn is-primary"/>
                 </form>
             </section>
         );
