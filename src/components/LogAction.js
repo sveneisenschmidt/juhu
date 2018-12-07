@@ -85,7 +85,7 @@ export default class LogAction extends Component {
                             />
                         </label>
                     </div>
-                    <input type="submit" value="Submit Achievement" className="btn is-primary"/>
+                    <input type="submit" value="Log Action" className="btn is-primary"/>
                 </form>
             </section>
         );

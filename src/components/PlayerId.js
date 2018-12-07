@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import './Player.css';
 import Apiservice from "../util/apiservice";
-import LinkButton from "./LinkButton";
 
 export default class PlayerList extends Component {
     constructor(props) {
