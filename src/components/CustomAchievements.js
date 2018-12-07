@@ -25,35 +25,34 @@ export default class CustomAchievements extends Component {
 
     render() {
         return (
-            <section className="container with-title custom-achievements">
-                <h2 className="title">Custom Achievements</h2>
-                <div className="messages">
-                    <div className="message -left">
-                        <i className="bcrikko">
-                        </i>
-                        <div className="balloon from-left">
-                            <p>Hello, would you like to reward someone? Please enter an achievement and submit
-                                :)</p>
+                <section className="container with-title balloon">
+                    <h2 className="title">Custom Achievements</h2>
+
+                        <div className="messages">
+                            <div className="message -left">
+                                <i className="bcrikko">
+                                </i>
+                                <div className="balloon from-left">
+                                    <p>Hello, would you like to reward someone? Please enter an achievement and submit
+                                        :)</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <form autoComplete="on" onSubmit={this.handleSubmit}>
-                    <div className="field">
-                        <label htmlFor="name_field" className="formTitle">User Name:
-                            <input type="text" id="name_field" name="username"
-                                   className="input" autoFocus/>
-                        </label>
-                    </div>
-                    <div className="field">
+                        <form autoComplete="on"onSubmit={this.handleSubmit}>
+                            <div className="field">
+                                <label htmlFor="name_field" className="formTitle">User Name:
+                                    <input type="text" id="name_field" name="username"className="input" autoFocus/>
+                                </label>
+                            </div>
+                            <div className="field">
                         <label htmlFor="name_field" className="formTitle">Achievement
                             <input type="text" id="name_field" name="action"
                                    className="input" />
                         </label>
                     </div>
-                    <input type="submit" value="Submit Achievement" className="btn is-primary"/>
-                </form>
-            </section>
-
+                    <input type="submit" value="Submit Achievement" className="customachievementsbtn is-primary"/>
+                        </form>
+                    </section>
         );
     }
 };
