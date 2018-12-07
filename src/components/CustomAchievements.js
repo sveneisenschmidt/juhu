@@ -9,7 +9,8 @@ export default class CustomAchievements extends Component {
         this.state = {
             username: '',
             action: '',
-            players: []
+            players: [],
+            actions: []
         }
     }
 
@@ -18,15 +19,20 @@ export default class CustomAchievements extends Component {
             this.setState({
                 players: response.data
             });
-            console.log(response.data)
+        });
+        Apiservice.getActions().then(response => {
+            this.setState({
+                actions: response.data
+            });
         });
     }
 
-    onChange = e => {
-        this.setState({[e.target.name]: e.target.value});
-    };
+    updateValue = (value, field) => {
+        let newState = {};
+        newState[field] = value;
 
-    updateUsernameValue = text => { this.setState({ username: text })}
+        this.setState(newState);
+    };
 
     onSubmit = e => {
         e.preventDefault();
@@ -34,11 +40,9 @@ export default class CustomAchievements extends Component {
         console.log({username, action});
 
         Apiservice.sendAction(username, action);
-
     };
 
     render() {
-        const {action} = this.state;
         return (
             <section className="container with-title balloon">
                 <h2 className="title">Custom Achievements</h2>
@@ -56,22 +60,29 @@ export default class CustomAchievements extends Component {
                 </div>
                 <form onSubmit={this.onSubmit}>
                     <div className="field">
-                        <label htmlFor="name_field" className="formTitle">User Name:
+                        <label className="formTitle">User Name:
                             <Autocomplete
                                 fieldName={'username'}
                                 cssClasses={'input'}
                                 autoFocus={true}
-                                updateValue={this.updateUsernameValue}
-                                suggestions={this.state.players.map((player, i) => {
+                                updateValue={this.updateValue}
+                                suggestions={this.state.players.map(player => {
                                     return <span id={player.username}>{player.name}</span>;
                                 })}
                             />
                         </label>
                     </div>
                     <div className="field">
-                        <label htmlFor="name_field" className="formTitle">Achievement
-                            <input type="text" id="name_field" name="action" value={action} onChange={this.onChange}
-                                   className="input"/>
+                        <label className="formTitle">Achievement
+                            <Autocomplete
+                                fieldName={'action'}
+                                cssClasses={'input'}
+                                autoFocus={false}
+                                updateValue={this.updateValue}
+                                suggestions={this.state.actions.map(action => {
+                                    return <span id={action.name}>{action.name}</span>;
+                                })}
+                            />
                         </label>
                     </div>
                     <input type="submit" value="Submit Achievement" className="btn is-primary"/>

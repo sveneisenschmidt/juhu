@@ -45,7 +45,7 @@ class Autocomplete extends Component {
             userInput: e.currentTarget.value
         });
 
-        this.props.updateValue(e.currentTarget.value);
+        this.props.updateValue(e.currentTarget.value, this.props.fieldName);
     };
 
     // Event fired when the user clicks on a suggestion
@@ -73,7 +73,7 @@ class Autocomplete extends Component {
             });
             e.preventDefault();
 
-            this.props.updateValue(filteredSuggestions[activeSuggestion].props.id);
+            this.props.updateValue(filteredSuggestions[activeSuggestion].props.id, this.props.fieldName);
         }
         // User pressed the up arrow, decrement the index
         else if (e.keyCode === 38) {

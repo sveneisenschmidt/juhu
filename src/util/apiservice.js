@@ -30,6 +30,10 @@ function getAchievements() {
     return axios.get(`${API_BASE_URL}achievements/`);
 }
 
+function getActions() {
+    return axios.get(`${API_BASE_URL}actions/`);
+}
+
 function sendAction(username, action){
     return axios.get(`${API_BASE_URL}progress/?username=${username}&action=${action}`);
 }
@@ -43,6 +47,7 @@ export default {
     getPlayers,
     getLeaderboard,
     getAchievements,
+    getActions,
     sendAction,
     getRandomQuote,
     getTransientAchievements,
