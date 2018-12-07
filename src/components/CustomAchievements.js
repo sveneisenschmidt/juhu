@@ -32,6 +32,7 @@ export default class CustomAchievements extends Component {
         console.log({username, action});
 
         Apiservice.sendAction(username, action);
+
     }
 
     render() {
@@ -45,8 +46,9 @@ export default class CustomAchievements extends Component {
                         <i className="bcrikko">
                         </i>
                         <div className="balloon from-left">
-                            <p>Hello, would you like to reward someone? Please enter an achievement and submit
-                                :)</p>
+                            <p>Hello, would you like to reward someone? Please enter an achievement
+                                <i className="snes-jp-logo"></i>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -57,6 +59,7 @@ export default class CustomAchievements extends Component {
                                 fieldName={'username'}
                                 cssClasses={'input'}
                                 autoFocus={true}
+                                value={username}
                                 suggestions={this.state.players.map((player, i) => {
                                     return <span id={player.username}>{player.name}</span>;
                                 })}
