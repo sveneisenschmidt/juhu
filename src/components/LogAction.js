@@ -1,9 +1,9 @@
 import React, {Component} from "react";
 import Autocomplete from './Autocomplete';
-import './CustomAchievements.css';
+import './LogAction.css';
 import Apiservice from "../util/apiservice";
 
-export default class CustomAchievements extends Component {
+export default class LogAction extends Component {
     constructor() {
         super();
         this.state = {
@@ -45,14 +45,14 @@ export default class CustomAchievements extends Component {
     render() {
         return (
             <section className="container with-title balloon">
-                <h2 className="title">Custom Achievements</h2>
+                <h2 className="title">Log Action</h2>
 
                 <div className="messages">
                     <div className="message -left">
                         <i className="bcrikko">
                         </i>
                         <div className="balloon from-left">
-                            <p>Hello, would you like to reward someone? Please enter an achievement
+                            <p>Hello, would you like to reward someone? Please log an action
                                 <i className="snes-jp-logo"></i>
                             </p>
                         </div>
@@ -73,7 +73,7 @@ export default class CustomAchievements extends Component {
                         </label>
                     </div>
                     <div className="field">
-                        <label className="formTitle">Achievement
+                        <label className="formTitle">Action
                             <Autocomplete
                                 fieldName={'action'}
                                 cssClasses={'input'}

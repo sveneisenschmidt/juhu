@@ -6,7 +6,7 @@ import Achievements from "./components/Achievements";
 import './Nes.css';
 import './App.css';
 import LinkButton from "./components/LinkButton";
-import CustomAchievements from "./components/CustomAchievements"
+import LogAction from "./components/LogAction"
 import PlayerId from "./components/PlayerId";
 
 const ROUTES = {
@@ -14,7 +14,7 @@ const ROUTES = {
     PLAYERS: "/players",
     LEADERBOARD: "/leaderboard",
     ACHIEVEMENTS: "/achievements",
-    CUSTOM_ACHIEVEMENTS: "/customachievements"
+    LOG_ACTION: "/logaction"
 };
 
 class App extends Component {
@@ -34,8 +34,8 @@ class App extends Component {
                             <LinkButton to={ROUTES.ACHIEVEMENTS} className="achievements btn is-warning">
                                 Achievements
                             </LinkButton>
-                            <LinkButton to={ROUTES.CUSTOM_ACHIEVEMENTS} className="custom-achievements btn is-primary">
-                                Custom Achievements
+                            <LinkButton to={ROUTES.LOG_ACTION} className="custom-achievements btn is-primary">
+                                Log Action
                             </LinkButton>
                         </div>
                     </section>
@@ -43,7 +43,7 @@ class App extends Component {
                     <Route path={ROUTES.LEADERBOARD} component={Leaderboard}/>
                     <Route path={ROUTES.ACHIEVEMENTS} component={Achievements}/>
                     <Route path={`${ROUTES.PLAYERS}/:playerId`} component={PlayerId}/>
-                    <Route path={ROUTES.CUSTOM_ACHIEVEMENTS} component={CustomAchievements}/>
+                    <Route path={ROUTES.LOG_ACTION} component={LogAction}/>
                 </div>
             </Router>
         );
