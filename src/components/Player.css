@@ -9,3 +9,11 @@
 .player__score {
     font-size: 30px;
 }
+
+.player__transient-achievements {
+
+}
+
+.player__transient-achievement {
+    margin-bottom: 1rem;
+}

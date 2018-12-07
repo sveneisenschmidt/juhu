@@ -11,6 +11,10 @@ ul > li {
     margin-bottom: 1rem;
 }
 
+.container-half {
+    width: 50%;
+}
+
 .container.with-title {
     padding-top: 2rem;
 }
@@ -83,4 +87,26 @@ tr td:not(:first-child) {
     box-shadow: -4px 0 #212529, 0 -4px #212529;
 }
 
+.progress-bar {
+    position: relative;
+    margin: 4px;
+    border: none;
+    box-shadow: 0 4px #212529, 0 -4px #212529, 4px 0 #212529, -4px 0 #212529;
+}
 
+.progress-bar__bar {
+    background: #209cee;
+    display: block;
+    padding: 0.3rem 1rem;
+    box-shadow: inset -4px -4px #006bb3;
+    color: #fff;
+}
+
+.left {
+    float: left;
+}
+
+
+.right {
+    float: right;
+}
