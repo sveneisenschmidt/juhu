@@ -6,9 +6,9 @@ export default class Achievement extends Component {
         const { achievement } = this.props;
 
         return (
-            <li>
-                <strong>{achievement.name} {achievement.label} {achievement.points}</strong>
-            </li>
+            <tr>
+                <td>{achievement.name}</td><td>{achievement.label}</td><td className={'text-centered'}>{achievement.points}</td>
+            </tr>
         );
     }
 };

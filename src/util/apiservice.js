@@ -17,9 +17,15 @@ function getAchievements() {
 function postAchievements(){
     return axios.post(`${API_BASE_URL}progress/`);
 }
+
+function getRandomQuote() {
+    return axios.get('https://talaikis.com/api/quotes/random/');
+}
+
 export default {
     getPlayers,
     getLeaderboard,
     getAchievements,
-    postAchievements
+    postAchievements,
+    getRandomQuote
 };

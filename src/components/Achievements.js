@@ -1,5 +1,4 @@
-import {Component} from "react";
-import React from "react";
+import React, {Component} from "react";
 import Apiservice from "../util/apiservice";
 import Achievement from "./Achievement";
 
@@ -26,10 +25,17 @@ export default class Achievements extends Component {
         return (
             <section className="container with-title">
                 <h2 className={'title'}>Achievements</h2>
-                <ul>
+                <table className={'table is-bordered is-centered'}>
+                    <tbody>
+                    <tr>
+                        <th>Name</th>
+                        <th>Label</th>
+                        <th>Points</th>
+                    </tr>
                     {this.state.achievements.map((achievement, i) =>
                         <Achievement key={i.toString()} achievement={achievement}/>)}
-                </ul>
+                    </tbody>
+                </table>
             </section>
         );
     }
