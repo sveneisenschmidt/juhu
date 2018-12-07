@@ -14,12 +14,12 @@ function getAchievements() {
     return axios.get(`${API_BASE_URL}achievements/`);
 }
 
-function postAchievements(){
-    return axios.post(`${API_BASE_URL}progress/`);
+function sendAction(username, action){
+    return axios.get(`${API_BASE_URL}progress/?username=${username}&action=${action}`);
 }
 export default {
     getPlayers,
     getLeaderboard,
     getAchievements,
-    postAchievements
+    sendAction
 };
