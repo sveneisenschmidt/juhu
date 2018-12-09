@@ -18,6 +18,10 @@ function getPersonalActivities(username) {
     return axios.get(`${API_BASE_URL}players/${username}/personal-activities/`);
 }
 
+function getPersonalActions(username) {
+    return axios.get(`${API_BASE_URL}players/${username}/personal-actions/`);
+}
+
 function getPlayers() {
     return axios.get(`${API_BASE_URL}players/`);
 }
@@ -52,5 +56,6 @@ export default {
     getRandomQuote,
     getTransientAchievements,
     getPersonalActivities,
-    getPersonalAchievements
+    getPersonalAchievements,
+    getPersonalActions
 };

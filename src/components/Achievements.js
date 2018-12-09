@@ -12,9 +12,7 @@ export default class Achievements extends Component {
     }
 
     componentDidMount() {
-
         Apiservice.getAchievements().then(response => {
-            console.log(response);
             this.setState({
                 achievements: response.data
             });
@@ -28,7 +26,6 @@ export default class Achievements extends Component {
                 <table className={'table is-bordered is-centered'}>
                     <tbody>
                     <tr>
-                        <th>Name</th>
                         <th>Label</th>
                         <th>Points</th>
                     </tr>

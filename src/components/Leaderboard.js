@@ -13,7 +13,6 @@ export default class Leaderboard extends Component {
 
     componentDidMount() {
         Apiservice.getLeaderboard().then(response => {
-            console.log(response);
             this.setState({
                 players: response.data
             });
@@ -28,6 +27,7 @@ export default class Leaderboard extends Component {
                     <thead>
                         <tr>
                             <th>Name</th>
+                            <th>Level</th>
                             <th>Score</th>
                         </tr>
                     </thead>

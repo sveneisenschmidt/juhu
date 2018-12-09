@@ -10,7 +10,9 @@ export default class PlayerList extends Component {
             player: {},
             transientAchievements: [],
             personalActivities: [],
-            personalAchievements: []
+            personalAchievements: [],
+            personalActions: [],
+            personalActionsUnique: []
         };
     }
 
@@ -40,6 +42,30 @@ export default class PlayerList extends Component {
                 personalAchievements: response.data
             });
         });
+
+        Apiservice.getPersonalActions(username).then(response => {
+            let tmp = [];
+            let personalActionsUnique = response.data
+                .filter((personalAction) => {
+                    if (tmp.indexOf(personalAction.name) < 0) {
+                        tmp.push(personalAction.name);
+                        return true;
+                    }
+                    return false;
+                }).map((personalActionUnique) => {
+                    return {
+                        ...personalActionUnique,
+                        count: response.data.filter((personalAction) => {
+                            return personalActionUnique.name === personalAction.name;
+                        }).length
+                    };
+                });
+
+            this.setState({
+                personalActions: response.data,
+                personalActionsUnique
+            });
+        });
     }
 
     render() {
@@ -61,14 +87,16 @@ export default class PlayerList extends Component {
                     <div className={'container with-title player__transient-achievements'}>
                         <p className="title">Progress</p>
                         <ul>
-                            {this.state.transientAchievements.map(function(transientAchievements){
+                            {this.state.transientAchievements.map(function(transientAchievement){
                                 return (
                                     <li>
                                         <div className="player__transient-achievement">
-                                            <p className="title">{transientAchievements.name}</p>
+                                            <img src={transientAchievement.image_url} className={'right'} alt="" height={'48'} width={'48'}/>
+                                            <b>{transientAchievement.label}</b>
+                                            <p>{ transientAchievement.description }</p>
                                             <div className={'progress-bar'}>
-                                                <div className={'progress-bar__bar'} style={{ width: `${transientAchievements.progress}%` }}>
-                                                    {transientAchievements.progress}%
+                                                <div className={'progress-bar__bar'} style={{ width: `${transientAchievement.progress}%` }}>
+                                                    {transientAchievement.progress}%
                                                 </div>
                                             </div>
                                         </div>
@@ -86,7 +114,8 @@ export default class PlayerList extends Component {
                             {this.state.personalAchievements.reverse().map(function (personalAchievement) {
                                 return (
                                     <li className="player__personal-achievement">
-                                        { personalAchievement.label }
+                                        <img src={personalAchievement.image_url} className={'right'} alt="" height={'48'} width={'48'}/>
+                                        <b>{ personalAchievement.label }</b>
                                         <p>{ personalAchievement.description }</p>
                                     </li>
                                 )
@@ -94,19 +123,25 @@ export default class PlayerList extends Component {
                         </ul>
                     </div>
                     }
-                </div>
 
+                    {this.state.personalActionsUnique.length > 0 &&
+                    <div className={'container with-title player__personal-achievements'}>
+                        <p className="title">Actions</p>
+                        <ul>
+                            {this.state.personalActionsUnique.map(function (personalAction) {
+                                return (
+                                    <li className="player__personal-achievement">
+                                        <img src={personalAction.image_url} className={'right'} alt="" height={'48'} width={'48'}/>
+                                        <b>{ personalAction.label }</b> ({ personalAction.count }x)
+                                        <p>{ personalAction.description }</p>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    </div>
+                    }
+                </div>
             </section>
         );
     }
 };
-
-/*               <div className="message from-left">
-                    <i className="bcrikko"></i>
-                    <div className="balloon from-left">
-                        <p>Hello {this.state.player.name}, you have
-                            <span className="player__score">{this.state.player.score}</span> points, well done!
-                        </p>
-                    </div>
-                </div>
-*/

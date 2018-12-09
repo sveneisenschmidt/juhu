@@ -25,9 +25,6 @@ class App extends Component {
                     <section className={'container with-title'}>
                         <h2 className={'title'}>Menu</h2>
                         <div>
-                            <LinkButton to={ROUTES.OVERVIEW} className="overview btn">
-                                Overview
-                            </LinkButton>
                             <LinkButton to={ROUTES.LEADERBOARD} className="leaderboard btn is-success">
                                 Leaderboard
                             </LinkButton>

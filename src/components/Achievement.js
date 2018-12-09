@@ -7,7 +7,8 @@ export default class Achievement extends Component {
 
         return (
             <tr>
-                <td>{achievement.name}</td><td>{achievement.label}</td><td className={'text-centered'}>{achievement.points}</td>
+                <td>{achievement.label}</td>
+                <td className={'text-centered'}>{achievement.points}</td>
             </tr>
         );
     }

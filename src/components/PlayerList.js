@@ -10,10 +10,12 @@ export default class PlayerList extends Component {
             <tr className={'player'}>
                 <td>
                     <Link to={`/players/${player.username}`}>
-                        <i className="icon trophy is-large"></i>
                         <img src={player.image_url} className={'player__image'} alt="" height={'64'} width={'64'}/>
                         <span className="player__name">{player.name}</span>
                     </Link>
+                </td>
+                <td className="player__level text-centered">
+                    {player.level}
                 </td>
                 <td className="player__score text-centered">
                     {player.score}

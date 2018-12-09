@@ -13,7 +13,6 @@ export default class Overview extends Component {
 
     componentDidMount() {
         Apiservice.getRandomQuote().then(response => {
-            console.log(response);
             this.setState({
                 quote: response.data
             });
