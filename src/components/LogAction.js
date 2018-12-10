@@ -38,7 +38,7 @@ export default class LogAction extends Component {
         e.preventDefault();
         const {username, action} = this.state;
         console.log(username, action);
-        //Apiservice.sendAction(username, action);
+        Apiservice.sendAction(username, action);
     };
 
     render() {
